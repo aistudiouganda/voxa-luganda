@@ -1,11 +1,11 @@
 """Pydantic schemas for request/response validation."""
-from pydantic import BaseModel, EmailStr
+from pydantic import BaseModel
 from typing import Optional, List, Any
 from datetime import datetime
 
 
 class UserCreate(BaseModel):
-    email: EmailStr
+    email: str
     password: str
     full_name: Optional[str] = None
     organization: Optional[str] = None
