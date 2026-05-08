@@ -1,0 +1,31 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.venv/
+venv/
+*.egg-info/
+
+# Models (too large for git)
+models/
+*.bin
+*.pt
+*.pth
+
+# Database
+*.db
+*.sqlite
+
+# Storage
+voxa-audio-storage/
+
+# Test files
+test_audio.wav
+
+# Environment
+.env
+.env.local
+.env.production
+
+# Vercel
+.vercel/
