@@ -157,15 +157,10 @@ async def _run_pipeline_inline(
         await update_status(
             "completed", 100.0,
             segments_json=segments,
-            full_text_luganda=full_luganda,
-            full_text_english=full_english,
-            num_speakers=num_speakers,
-            word_count=word_count,
             accuracy_score=round(avg_confidence * 100, 2),
             duration_seconds=round(duration, 2),
-            processing_time_seconds=round(elapsed, 2),
-            model_versions={"whisper": settings.WHISPER_MODEL_SIZE},
         )
+        logger.info(f"[{transcript_id}] Stats — speakers={num_speakers}, words={word_count}, elapsed={elapsed:.1f}s")
         logger.info(f"[{transcript_id}] Completed in {elapsed:.1f}s")
 
     except Exception as e:
